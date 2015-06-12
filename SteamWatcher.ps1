@@ -60,27 +60,27 @@ switch ($result) {
      $resultpower = $host.ui.PromptForChoice("`n`n-Action to take-", "Would you like your computer to shutdown or sleep when downloads are complete?", $optionspower, 0)
       
       switch ($resultpower) {
-      	0 {
+        0 {
           if($runWatcher) {          
-          			write-host "Your PC will be shutdown when download activity is complete.`n`n"
-          			startWatcher $folder $interval $debug
-          			write-host -foregroundcolor "yellow" "`nDownload activity appears to be complete. Shutting down computer in 10 seconds."
-          			start-sleep -s 10
-          			add-content "SteamWatcher_log.txt" "$(get-date) --- Downloads appear to be complete. Shutting Down now."
-          			stop-process -processname steam* -Force
+                write-host "Your PC will be shutdown when download activity is complete.`n`n"
+                startWatcher $folder $interval $debug
+                write-host -foregroundcolor "yellow" "`nDownload activity appears to be complete. Shutting down computer in 10 seconds."
+                start-sleep -s 10
+                add-content "SteamWatcher_log.txt" "$(get-date) --- Downloads appear to be complete. Shutting Down now."
+                stop-process -processname steam* -Force
 
-          			stop-computer
+                stop-computer
           }
         }
         
         1 {
           if($runWatcher) {
                    
-      			write-host "Your PC will standby when download activity is complete.`n`n"
-      			startWatcher $folder $interval $debug
-      			write-host -foregroundcolor "yellow" "`nDownload activity appears to be complete. Standing by computer in 10 seconds."
-      			start-sleep -s 10
-      			add-content "log.txt" "$(get-date) --- Downloads appear to be complete. Standing by now."
+            write-host "Your PC will standby when download activity is complete.`n`n"
+            startWatcher $folder $interval $debug
+            write-host -foregroundcolor "yellow" "`nDownload activity appears to be complete. Standing by computer in 10 seconds."
+            start-sleep -s 10
+            add-content "log.txt" "$(get-date) --- Downloads appear to be complete. Standing by now."
             
             Add-Type -Assembly System.Windows.Forms
             [System.Windows.Forms.Application]::SetSuspendState("Suspend", $false, $false)
@@ -90,10 +90,10 @@ switch ($result) {
   }
   
   1 {
-		write-host "`n`nYou can specify the correct folder to be monitored by using the"
-		write-host "-folder parameter, for eg: '.\steamwatcher.ps1 -folder C:\somewhere\steam\steamapps'`n`n"
-		write-host "A custom check interval can also be set using '-interval XX' where XX = interval in seconds.`n`n"
-		write-host "script will end in 20 seconds.  Hit Ctrl+C to end it now."
-		start-sleep -s 20    
+    write-host "`n`nYou can specify the correct folder to be monitored by using the"
+    write-host "-folder parameter, for eg: '.\steamwatcher.ps1 -folder C:\somewhere\steam\steamapps'`n`n"
+    write-host "A custom check interval can also be set using '-interval XX' where XX = interval in seconds.`n`n"
+    write-host "script will end in 20 seconds.  Hit Ctrl+C to end it now."
+    start-sleep -s 20    
   }
 }
