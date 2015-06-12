@@ -15,6 +15,6 @@ To run:
 1. Make sure Windows is happy by running `Set-ExecutionPolicy Unrestricted` in Powershell once as admin
 2. Either execute `./SteamWatcher_Extended.ps1` in Powershell or Right click -> Run in Powershell
 
-###[Download](http://frankzhao.net/files/SteamWatcher_Extended_v1.0.zip)
+###[Download](http://frankzhao.net/SteamWatcher_v1.1.zip)
 
 Microsoft .Net Framework 2.0+ required. You can get the latest version here: [http://www.microsoft.com/download/en/details.aspx?id=24872](http://www.microsoft.com/download/en/details.aspx?id=24872)
