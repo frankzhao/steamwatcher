@@ -4,7 +4,7 @@ SteamWatcher is a lightweight PowerShell script that either shuts down or stands
 Custom folder locations can be specified by using the `-folder` parameter. 
 For example:
 
-`./SteamWatcher_Extended_v1.0.ps1 -folder "C:\Users\"`
+`./SteamWatcher.ps1 -folder "C:\Users\"`
 
 will check the directory `C:\Users\`.
 
@@ -13,7 +13,7 @@ Similarly, a custom interval can be set using the parameter `-interval seconds` 
 To run:
 
 1. Make sure Windows is happy by running `Set-ExecutionPolicy Unrestricted` in Powershell once as admin
-2. Either execute `./SteamWatcher_Extended.ps1` in Powershell or Right click -> Run in Powershell
+2. Either execute `./SteamWatcher.ps1` in Powershell or Right click -> Run in Powershell
 
 ###[Download](http://frankzhao.com.au/SteamWatcher_v1.1.zip)
 
